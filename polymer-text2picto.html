@@ -1,0 +1,35 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`polymer-text2picto`
+Polymer component to use the Text2Picto service to translate simple texts to pictograms
+
+@demo demo/index.html
+-->
+
+<dom-module id="polymer-text2picto">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+  </template>
+
+  <script>
+    class MyElement extends Polymer.Element {
+      static get is() { return 'polymer-text2picto'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'polymer-text2picto'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(MyElement.is, MyElement);
+  </script>
+</dom-module>
