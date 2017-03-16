@@ -1,4 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
 
 <!--
 `polymer-text2picto`
@@ -9,12 +10,11 @@ Polymer component to use the Text2Picto service to translate simple texts to pic
 
 <dom-module id="polymer-text2picto">
   <template>
-    <style>
-      :host {
-        display: block;
-      }
-    </style>
-    <h2>Hello [[prop1]]</h2>
+    <h1>Has escrito: [[text]]</h1>
+    <iron-ajax id="xhr" url="http://al.abletoinclude.eu/Text2Picto.php" method="GET" handle-as="json" on-response="handleResponse" last-response="{{response}}"></iron-ajax>
+    <template is="dom-repeat" items="[[response.pictos]]">
+      <img src="[[item]]" width="256" height="256" alt="" />
+    </template>
   </template>
 
   <script>
@@ -22,19 +22,28 @@ Polymer component to use the Text2Picto service to translate simple texts to pic
       static get is() { return 'polymer-text2picto'; }
       static get properties() {
         return {
-          prop1: {
+          text: {
             type: String,
-            value: 'polymer-text2picto'
+            value: 'hola amigo'
           },
-          target: {
+          type: {
             type: String,
-            value: 'Sclera'
+            value: 'sclera'
           },
           language: {
             type: String,
-            value: 'en'
+            value: 'spanish'
           }
         };
+      }
+      ready() {
+        super.ready();
+        this.$.xhr.params = {
+          'text': this.text,
+          'type': this.type,
+          'language': this.language
+        };
+        this.$.xhr.generateRequest();
       }
     }
 
