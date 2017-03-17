@@ -1,5 +1,6 @@
 {
   "name": "polymer-text2picto",
+  "version": "0.1.0",
   "description": "Polymer component to use the Text2Picto service to translate simple texts to pictograms",
   "main": "polymer-text2picto.html",
   "dependencies": {
