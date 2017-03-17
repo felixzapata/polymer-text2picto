@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html language="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
@@ -17,10 +17,41 @@
   </head>
   <body>
     <div class="vertical-section-container centered">
-      <h3>Basic polymer-text2picto demo</h3>
+      <h1>Basic polymer-text2picto demo</h1>
+      <h2>Spanish and Sclera</h2>
       <demo-snippet>
         <template>
-          <polymer-text2picto lang="es" target="Beta"></polymer-text2picto>
+          <polymer-text2picto language="spanish" type="sclera" text="Ella bebe vino rojo"></polymer-text2picto>
+        </template>
+      </demo-snippet>
+      <h2>Spanish and Beta</h2>
+      <demo-snippet>
+        <template>
+          <polymer-text2picto language="spanish" type="beta" text="Ella bebe vino rojo"></polymer-text2picto>
+        </template>
+      </demo-snippet>
+      <h2>English and Sclera</h2>
+      <demo-snippet>
+        <template>
+          <polymer-text2picto language="english" type="sclera" text="She drinks red wine"></polymer-text2picto>
+        </template>
+      </demo-snippet>
+      <h2>English and Beta</h2>
+      <demo-snippet>
+        <template>
+          <polymer-text2picto language="english" type="beta" text="She drinks red wine"></polymer-text2picto>
+        </template>
+      </demo-snippet>
+      <h2>Dutch and Sclera</h2>
+      <demo-snippet>
+        <template>
+          <polymer-text2picto language="dutch" type="sclera" text="Hij drinkt rode wijn."></polymer-text2picto>
+        </template>
+      </demo-snippet>
+      <h2>Dutch and Beta</h2>
+      <demo-snippet>
+        <template>
+          <polymer-text2picto language="dutch" type="beta" text="Hij drinkt rode wijn."></polymer-text2picto>
         </template>
       </demo-snippet>
     </div>
