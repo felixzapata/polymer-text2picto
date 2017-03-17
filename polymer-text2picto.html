@@ -23,14 +23,23 @@ Polymer component to use the Text2Picto service to translate simple texts to pic
       static get is() { return 'polymer-text2picto'; }
       static get properties() {
         return {
+        /**
+          * The text to transform to pictograms.
+        */
           text: {
             type: String,
             value: ''
           },
+        /**
+          * Target pictograph: Sclera or Beta.
+        */
           type: {
             type: String,
             value: 'sclera'
           },
+        /**
+          * Language to translate: Spanish, English or Dutch.
+        */
           language: {
             type: String,
             value: 'spanish'
