@@ -11,7 +11,8 @@ Polymer component to use the Text2Picto service to translate simple texts to pic
 <dom-module id="polymer-text2picto">
   <template>
     <h1>Has escrito: [[text]]</h1>
-    <iron-ajax id="xhr" url="http://al.abletoinclude.eu/Text2Picto.php" method="GET" handle-as="json" on-response="handleResponse" last-response="{{response}}"></iron-ajax>
+    <iron-ajax id="xhr" url="http://al.abletoinclude.eu/Text2Picto.php" method="GET" handle-as="json"
+      last-response="{{response}}"></iron-ajax>
     <template is="dom-repeat" items="[[response.pictos]]">
       <img src="[[item]]" width="256" height="256" alt="" />
     </template>
@@ -24,7 +25,7 @@ Polymer component to use the Text2Picto service to translate simple texts to pic
         return {
           text: {
             type: String,
-            value: 'hola amigo'
+            value: ''
           },
           type: {
             type: String,
