@@ -11,9 +11,8 @@ Polymer component to use the Text2Picto service to translate simple texts to pic
 <dom-module id="polymer-text2picto">
   <template>
     <h1>Has escrito: [[text]]</h1>
-    <iron-ajax id="xhr" url="http://al.abletoinclude.eu/Text2Picto.php" method="GET" handle-as="json"
-      last-response="{{response}}"></iron-ajax>
-    <template is="dom-repeat" items="[[response.pictos]]">
+    <iron-ajax id="xhr" url="http://al.abletoinclude.eu/Text2Picto.php" method="GET" handle-as="json" on-response="handleResponse"></iron-ajax>
+    <template is="dom-repeat" items="[[pictos]]">
       <img src="[[item]]" width="256" height="256" alt="" />
     </template>
   </template>
@@ -23,23 +22,29 @@ Polymer component to use the Text2Picto service to translate simple texts to pic
       static get is() { return 'polymer-text2picto'; }
       static get properties() {
         return {
-        /**
-          * The text to transform to pictograms.
-        */
+          pictos: {
+            type: Array,
+            value: function () {
+              return [];
+            }
+          },
+          /**
+            * The text to transform to pictograms.
+          */
           text: {
             type: String,
             value: ''
           },
-        /**
-          * Target pictograph: Sclera or Beta.
-        */
+          /**
+            * Target pictograph: Sclera, Beta, Arasaac.
+          */
           type: {
             type: String,
             value: 'sclera'
           },
-        /**
-          * Language to translate: Spanish, English or Dutch.
-        */
+          /**
+            * Language to translate: Spanish, English or Dutch.
+          */
           language: {
             type: String,
             value: 'spanish'
@@ -54,6 +59,9 @@ Polymer component to use the Text2Picto service to translate simple texts to pic
           'language': this.language
         };
         this.$.xhr.generateRequest();
+      }
+      handleResponse(data) {
+        this.set('pictos', data.detail.response.pictos)
       }
     }
 

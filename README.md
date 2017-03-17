@@ -7,8 +7,9 @@ The objective of Able to Include is to ease the integration of people with intel
 
 This component is a wrapper of the [Text2Picto tool](http://able-to-include.com/accessible-services/services/text-to-pictograms/), developed by the University of Leuven (Belgium).
 
-They use two picture languages:
+The component use three picture languages:
 
+* Arasaac
 * Beta
 * Sclera
 
