@@ -6,6 +6,12 @@
     "polymer": "Polymer/polymer#^2.0.0-rc.2",
     "iron-ajax": "PolymerElements/iron-ajax#2.0-preview"
   },
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "a11y"
+  ],
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#2.0-preview",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#2.0-preview",
